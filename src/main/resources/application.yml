@@ -2,6 +2,8 @@
 spring:
   application:
     name: catalog-service
+  profiles:
+    active: test-data
 
 server:
   port: 9001
@@ -10,3 +12,5 @@ server:
     threads:
       max: 50
       min-spare: 5
+polar:
+  greeting: Welcome to the local book catalog!
