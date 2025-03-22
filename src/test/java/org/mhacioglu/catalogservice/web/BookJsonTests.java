@@ -43,7 +43,7 @@ public class BookJsonTests {
                 """;
         assertThat(json.parse(content))
                 .usingRecursiveComparison()
-                .isEqualTo(Book.build("1234567890", Instant.now(), Instant.now(),
+                .isEqualTo(Book.build("1234567890", null, null,
                         "Title", "Author", 9.90));
     }
 
