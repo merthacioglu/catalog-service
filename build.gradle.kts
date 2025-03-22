@@ -27,6 +27,7 @@ dependencies {
     implementation("org.springframework.retry:spring-retry")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation ("org.springframework.boot:spring-boot-starter-data-jdbc")
+    implementation("org.flywaydb:flyway-database-postgresql:10.20.1")
     runtimeOnly ("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-webflux")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
