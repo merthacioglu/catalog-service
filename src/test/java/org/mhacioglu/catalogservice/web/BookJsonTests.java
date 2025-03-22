@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
 
+import java.time.Instant;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JsonTest
@@ -16,7 +18,8 @@ public class BookJsonTests {
 
     @Test
     void testSerialize() throws Exception {
-        var book = new Book("1234567890", "Title", "Author", 9.90);
+        var book = Book.build("1234567890", Instant.now(), Instant.now(),
+                "Title", "Author", 9.90);
         var jsonContent = json.write(book);
         assertThat(jsonContent).extractingJsonPathStringValue("@.isbn")
                 .isEqualTo(book.isbn());
@@ -40,7 +43,8 @@ public class BookJsonTests {
                 """;
         assertThat(json.parse(content))
                 .usingRecursiveComparison()
-                .isEqualTo(new Book("1234567890", "Title", "Author", 9.90));
+                .isEqualTo(Book.build("1234567890", Instant.now(), Instant.now(),
+                        "Title", "Author", 9.90));
     }
 
 }

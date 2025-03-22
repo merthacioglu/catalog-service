@@ -42,10 +42,14 @@ public class BookService {
         }
 
         var bookToUpdate = new Book(
+                existingBook.get().id(),
+                existingBook.get().createdDate(),
+                existingBook.get().lastModifiedDate(),
                 existingBook.get().isbn(),
                 book.title(),
                 book.author(),
-                book.price()
+                book.price(),
+                existingBook.get().version()
         );
 
         return bookRepository.save(bookToUpdate);
