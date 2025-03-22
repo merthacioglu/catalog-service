@@ -23,7 +23,7 @@ class CatalogServiceApplicationTests {
     @Test
     void whenPostRequestThenBookCreated() {
         var expectedBook = Book.build("1231231231", null, null,
-                "Title", "Author", 9.90);
+                "Title", "Author", 9.90, null);
         client.post()
                 .uri("/books")
                 .bodyValue(expectedBook)

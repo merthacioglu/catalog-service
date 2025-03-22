@@ -24,7 +24,7 @@ public class BookValidationTests {
 
     @Test
     void whenAllFieldsCorrectThenValidationSucceeds() {
-        var book = Book.build("a234567890", null, null, "Title", "Author", 9.90);
+        var book = Book.build("a234567890", null, null, "Title", "Author", 9.90, null);
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
         assertThat(violations).hasSize(1);
         assertThat(violations.iterator().next().getMessage())

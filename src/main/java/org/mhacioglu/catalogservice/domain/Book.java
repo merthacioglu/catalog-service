@@ -34,12 +34,14 @@ public record Book (
                 @Positive(message = "The book price must be greater than 0.")
         Double price,
 
+        String publisher,
+
         @Version
         int version
 
 ){
         public static Book build(String isbn, Instant createdDate, Instant lastModifiedDate,
-                                 String title, String author, Double price) {
-                return new Book(null, createdDate, lastModifiedDate, isbn, title, author, price, 0);
+                                 String title, String author, Double price, String publisher) {
+                return new Book(null, createdDate, lastModifiedDate, isbn, title, author, price,  publisher, 0);
         }
 }
