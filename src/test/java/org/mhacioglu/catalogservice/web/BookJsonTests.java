@@ -24,7 +24,7 @@ public class BookJsonTests {
 
         var jsonContent = json.write(book);
         assertThat(jsonContent).extractingJsonPathNumberValue("@.id")
-                .isEqualTo(book.id());
+                .isEqualTo(book.id().intValue());
         assertThat(jsonContent).extractingJsonPathStringValue("@.isbn")
                 .isEqualTo(book.isbn());
         assertThat(jsonContent).extractingJsonPathStringValue("@.title")
