@@ -31,7 +31,7 @@ spring:
 
 
 server:
-  port: 6082
+  port: 9001
   tomcat:
     connection-timeout: 2s
     threads:

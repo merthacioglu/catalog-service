@@ -5,7 +5,7 @@ metadata:
   labels:
     app: catalog-service
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: catalog-service
@@ -24,9 +24,9 @@ spec:
             exec:
               command:  [ "sh", "-c", "sleep 5" ]
         ports:
-        - containerPort: 9001
+        - containerPort: 6082
         env:
         - name: BPL_JVM_THREAD_COUNT
           value: "50"
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:postgresql://polar-postgres/polardb_catalog
+          value: jdbc:postgresql://polar-postgres-catalog/polardb_catalog
